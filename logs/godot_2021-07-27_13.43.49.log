@@ -1,0 +1,7 @@
+Godot Engine v3.3.2.stable.official - https://godotengine.org
+OpenGL ES 3.0 Renderer: GeForce GT 540M/PCIe/SSE2
+OpenGL ES Batching: ON
+ 
+**WARNING**: Font oversampling does not work in "Viewport" stretch mode, only "2D". To remove this warning, disable Rendering > Quality > Dynamic Fonts > Use Oversampling in the Project Settings.
+   At: scene/main/scene_tree.cpp:1244:_update_root_rect() - Font oversampling does not work in "Viewport" stretch mode, only "2D". To remove this warning, disable Rendering > Quality > Dynamic Fonts > Use Oversampling in the Project Settings.
+no hit function
