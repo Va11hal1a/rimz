@@ -13,3 +13,5 @@ Open source game inspired by rimworld. Powered by Godot Engine. Target platform 
 - [ ] Build system
 - [ ] Neutral being behaviour
 - [ ] Procedure generation
+
+![screenshot](screenshot.png "screenshot")
