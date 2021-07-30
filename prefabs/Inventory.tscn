@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/Inventory.gd" type="Script" id=1]
+[ext_resource path="res://prefabs/Slot.tscn" type="PackedScene" id=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+gridContainerPath = NodePath("GridContainer")
+slotInstance = ExtResource( 2 )
+
+[node name="GridContainer" type="GridContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}

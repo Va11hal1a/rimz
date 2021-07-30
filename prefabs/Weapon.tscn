@@ -1,0 +1,14 @@
+[gd_scene format=2]
+
+[node name="Weapon" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -5.78123
+margin_top = -2.47767
+margin_right = 34.2188
+margin_bottom = 1.52233
+rect_pivot_offset = Vector2( 5.3495, 1.88458 )
+color = Color( 0.72549, 0.72549, 0.72549, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

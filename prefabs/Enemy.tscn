@@ -1,9 +1,27 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/Enemy.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 20.4596, 20.4707 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "hit"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 119.559
 
 [node name="Enemy" type="KinematicBody2D"]
 position = Vector2( 184.416, 105.126 )
@@ -34,3 +52,13 @@ collide_with_areas = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+
+[node name="Player" type="AnimationPlayer" parent="."]
+anims/hit = SubResource( 2 )
+
+[node name="Scan" type="Area2D" parent="."]
+
+[node name="Area" type="CollisionShape2D" parent="Scan"]
+shape = SubResource( 3 )
+
+[node name="Use" type="Node2D" parent="."]
