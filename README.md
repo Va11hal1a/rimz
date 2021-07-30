@@ -1,5 +1,5 @@
 # rimz
-Open source game inspired by rimworld. Powered by Godot Engine. 
+Open source game inspired by rimworld. Powered by Godot Engine. Target platform is android.
 ### TO DO
 
 - [x] Inventory system
