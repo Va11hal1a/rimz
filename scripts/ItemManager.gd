@@ -4,6 +4,7 @@ class Item:
 	var icon = null;
 	var description = "empty";
 	var name = "item"
+	var actions = ["drop"]
 	func _init(icon:Texture,description:String, name: String):
 		self.icon = icon;
 		self.description = description;
@@ -12,10 +13,14 @@ class ItemEffects extends Item:
 	var effects = {}
 	func _init(icon:Texture,description:String,name: String,effects = {}).(icon,description,name):
 		effects = effects;
+
+		actions.append("use")
 class ItemUse extends Item:
 	var instance = null
 	func _init(icon:Texture,description:String,name: String,istance).(icon,description, name):
 		self.instance = instance;
+
+		actions.append("equip")
 	func do():
 		print("use " + self.name);
 
@@ -45,6 +50,8 @@ class Inventory:
 		emit_signal("inventoryRefresh");
 	func removeItem(item: Item):
 		var id = findIdByName(item.name);
+		if(id == -1):
+			return false;
 		slots[id].count-=1;
 		if(slots[id].count == 0):
 			slots.remove(id);

@@ -26,7 +26,7 @@ class State:
 	func start():
 		print("state begin");
 	func update():
-		print("state process");
+		pass
 	func end():
 		print("state end");
 class RoamState extends State:

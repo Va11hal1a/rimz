@@ -1,4 +1,4 @@
-extends Control
+extends TextureButton
 
 func init(item: ItemManager.Item, count):
 	$NameLabel.text = item.name;
