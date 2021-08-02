@@ -4,7 +4,7 @@ class Item:
 	var icon = null;
 	var description = "empty";
 	var name = "item"
-	var actions = ["drop"]
+	var actions = ["drop","dropAll"]
 	func _init(icon:Texture,description:String, name: String):
 		self.icon = icon;
 		self.description = description;
@@ -48,12 +48,12 @@ class Inventory:
 		else:
 			slots[id].count+=1;
 		emit_signal("inventoryRefresh");
-	func removeItem(item: Item):
+	func removeItem(item: Item, count = 1):
 		var id = findIdByName(item.name);
 		if(id == -1):
 			return false;
-		slots[id].count-=1;
-		if(slots[id].count == 0):
+		slots[id].count-=count;
+		if(slots[id].count <= 0):
 			slots.remove(id);
 		emit_signal("inventoryRefresh");
 

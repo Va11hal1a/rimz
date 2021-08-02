@@ -30,10 +30,10 @@ run/main_scene="res://Scene.tscn"
 
 [autoload]
 
-Data="*res://base/Data.gd"
+Data="*res://autoload/Data.gd"
 Global="*res://scripts/Global.gd"
-Utils="*res://base/Utils.tscn"
-Dialogue="*res://base/Dialogue.gd"
+Utils="*res://autoload/Utils.tscn"
+Dialogue="*res://autoload/Dialogue.gd"
 
 [display]
 

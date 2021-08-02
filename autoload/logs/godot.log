@@ -1,0 +1,18 @@
+Godot Engine v3.3.2.stable.official - https://godotengine.org
+OpenGL ES 3.0 Renderer: GeForce GT 540M/PCIe/SSE2
+OpenGL ES Batching: ON
+ 
+Project is missing: /home/sayori/Projects/project/project.godot
+Project is missing: /home/sayori/Desktop/Projects/godot/polygon/project.godot
+**ERROR**: Condition "default_certs != __null" is true.
+   At: modules/mbedtls/crypto_mbedtls.cpp:201:load_default_certificates() - Condition "default_certs != __null" is true.
+**ERROR**: Error opening file '/home/sayori/Desktop/godot/other/Minehunter-master/sealedbit_icon.png'.
+   At: core/io/image_loader.cpp:56:load_image() - Error opening file '/home/sayori/Desktop/godot/other/Minehunter-master/sealedbit_icon.png'.
+**ERROR**: Error opening file '/home/sayori/Desktop/godot/math/icon.png'.
+   At: core/io/image_loader.cpp:56:load_image() - Error opening file '/home/sayori/Desktop/godot/math/icon.png'.
+**ERROR**: Error opening file '/home/sayori/s/icon.png'.
+   At: core/io/image_loader.cpp:56:load_image() - Error opening file '/home/sayori/s/icon.png'.
+**ERROR**: Error opening file '/home/sayori/Desktop/godot/other/game/template/icon.png'.
+   At: core/io/image_loader.cpp:56:load_image() - Error opening file '/home/sayori/Desktop/godot/other/game/template/icon.png'.
+**ERROR**: Error opening file '/home/sayori/gt/templates/template/icon.png'.
+   At: core/io/image_loader.cpp:56:load_image() - Error opening file '/home/sayori/gt/templates/template/icon.png'.

@@ -11,6 +11,11 @@ var selectedSlot setget setSlot;
 onready var nameLabel = $Panel/Container/Name;
 onready var descriptionLabel = $Panel/Container/Description;
 
+onready var pickUpScene = preload("res://prefabs/PickUp.tscn");
+onready var attachedPlayerId = 0;
+
+onready var tween = $Tween;
+
 var debug = false;
 
 func clearActions(slot):
@@ -41,8 +46,14 @@ func setSlot(slot):
 	
 
 func _ready():
+	if(attachedPlayerId > Global.players.size() || attachedPlayerId == -1): #in case if player is not initialized or attached
+		get_parent().get_node("InventoryButton").visible=false;
+		return;
+
 	inventory.connect("inventoryRefresh", self, "refresh");
 	test();
+
+	Global.players[attachedPlayerId].get_node("PickUpArea").connect("area_entered",self,"itemEntered");
 
 func refresh():
 	for child in gridContainer.get_children():
@@ -70,10 +81,37 @@ func slot_select(id):
 func use(slot):
 	if(debug): print("use item ", slot.item.name)
 
-func drop(slot):
+func drop(slot,count = 1):
+
+	var pickUpInstance = pickUpScene.instance();
+	pickUpInstance.global_position = Global.players[attachedPlayerId].global_position;
+	pickUpInstance.init(slot.item, count);
+	get_parent().get_parent().add_child(pickUpInstance);
+	dropItemAnimation(pickUpInstance);
+
 	if(debug): print("drop item", slot.item.name);
-	inventory.removeItem(slot.item);
+	inventory.removeItem(slot.item,count);
 
 	if(slot.count == 0): #clear name, definition and actions
 		clearDefnName();
 		clearActions(slot);
+
+func dropAll(slot):
+	drop(slot,slot.count);
+
+func dropItemAnimation(instance):
+	var xDeviation = rand_range(-1,1)*20.0;
+	var yDeviation = rand_range(0,1)*20.0;
+
+	tween.interpolate_property(instance,"position:x",
+	instance.position.x, instance.position.x+xDeviation, 
+	0.5, tween.TRANS_CUBIC);
+
+	tween.interpolate_property(instance,"position:y",
+	instance.position.y, instance.position.y-yDeviation, 
+	0.5, tween.TRANS_CUBIC);
+
+	tween.start();
+
+func itemEntered(item):
+	pass
