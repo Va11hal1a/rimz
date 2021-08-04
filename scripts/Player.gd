@@ -1,5 +1,6 @@
 extends Entity
 
+var inventoryId = 0
 func _ready():
 	._ready();
 	add_to_group("player");

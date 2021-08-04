@@ -94,3 +94,17 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Pickup" type="Button" parent="CanvasLayer"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -85.9406
+margin_top = 64.6272
+margin_right = 1.05945
+margin_bottom = 122.627
+mouse_filter = 1
+text = "Pick Up"
+__meta__ = {
+"_edit_use_anchors_": false
+}
